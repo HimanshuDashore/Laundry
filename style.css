@@ -1,0 +1,161 @@
+/* --- Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevents scrolling as requested */
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* --- Navbar (No Flexbox - using Float and Inline-Block) --- */
+.navbar {
+    width: 100%;
+    height: 70px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0 5%;
+    line-height: 70px; /* Vertically centers the text */
+}
+
+.nav-container {
+    width: 100%;
+    position: relative;
+}
+
+.logo {
+    display: inline-block;
+    font-size:  30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-links {
+    display: inline-block;
+    list-style: none;
+    margin-left: 2%;
+}
+
+.nav-links li {
+    display: inline; /* Required instruction: Use Display Inline */
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #666666;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links li a:hover {
+    color: #29b6f6;
+}
+
+.user-profile {
+    float: right; /* Places the user name on the right side */
+}
+
+.username {
+    display: inline-block;
+    background-color: #e3f2fd;
+    color: #29b6f6;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 15px; /* Vertical adjustments without flexbox */
+}
+
+/* --- Hero Section (No Flexbox - using Inline-Block and Viewport Units) --- */
+.hero-section {
+    width: 100vw;
+    height: calc(100vh - 70px); /* Takes remaining height precisely to avoid scroll */
+    padding: 0 5%;
+}
+
+.hero-container {
+    width: 100%;
+    height: 100%;
+    white-space: nowrap; /* Prevents the inline-block divs from wrapping down */
+}
+
+.hero-left, .hero-right {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    vertical-align: middle;
+    white-space: normal; /* Restores normal text wrapping inside the divs */
+}
+
+/* Left Content Styles */
+.hero-left {
+    position: relative;
+}
+
+.hero-content-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Centered vertically perfectly using Position */
+    width: 90%;
+}
+
+.hero-left h1 {
+    font-size: 42px;
+    color: #37474f;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-left .highlight {
+    color: #29b6f6;
+}
+
+.hero-left p {
+    font-size: 16px;
+    color: #78909c;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 480px;
+}
+
+.cta-btn {
+    background-color: #29b6f6;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(41, 182, 246, 0.4);
+    transition: background-color 0.2s ease;
+}
+
+.cta-btn:hover {
+    background-color: #039be5;
+}
+
+/* Right Image Styles */
+.hero-right {
+    text-align: center;
+    position: relative;
+}
+
+.hero-right img {
+    max-width: 85%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the image dynamically */
+}
